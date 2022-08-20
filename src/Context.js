@@ -11,8 +11,38 @@ function ContextProvider(props) {
             .then(pics => setAllPhotos(pics.data.children))
     }, [])
 
+    function compare(a, b){
+        
+        if(a.data.title[0] === "(" || a.data.title[0] === "["){
+            if(b.data.title[0] === "(" ||b.data.title[0] === "["){
+                if(a.data.title[5] >= b.data.title[5]){
+                    return 1
+                } else {
+                    return -1
+                }
+            }
+            return -1
+        }
+        if(b.data.title[0] === "(" ||b.data.title[0] === "["){
+            return 1
+        }
+        if(a.data.title[0] >= b.data.title[0]){
+            return 1
+        } else {
+            return -1
+        }
+    }
+    function sortPhotos(){
+        setAllPhotos(prev =>{
+            const sortedPics = prev
+            sortedPics.sort(compare)
+            return sortedPics
+        })
+        
+    }
+
     return (
-        <Context.Provider value={{allPhotos}}>
+        <Context.Provider value={{allPhotos, sortPhotos}}>
             {props.children}
         </Context.Provider>
     )

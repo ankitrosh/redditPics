@@ -1,4 +1,4 @@
-import React, {useContext} from "react"
+import React, {useContext, useEffect} from "react"
 import {Link} from "react-router-dom"
 import {Context} from "../Context"
 export default function Photos(){
@@ -15,13 +15,19 @@ export default function Photos(){
             return title 
         }
     }
-
+    
     const displayPhotos = allPhotos.map(photo => {
+        //console.log(photo.data.title)
         return(
             <div key = {photo.data.id} className="photos--card">
                 
-                <img src = {photo.data.thumbnail} className = "images"></img>
-                <Link to={`post/${photo.data.id}`}><p className = "photos--title"> {trim(photo.data.title) } </p> </Link>
+                <Link to={`post/${photo.data.id}`}><img src = {photo.data.thumbnail} className = "images"></img></Link>
+                <Link to={`post/${photo.data.id}`}>
+                    <p className = "photos--title tooltip"> {trim(photo.data.title) } 
+                        <span className="tooltiptext">{photo.data.title}</span>
+                    </p> 
+                    
+                </Link>
                 
             </div>
             
@@ -31,9 +37,14 @@ export default function Photos(){
     })
     
     return (
+        
+            
         <div className = "photos--divs">
+            
             {displayPhotos}
         </div>
+        
+        
         
     )
 }

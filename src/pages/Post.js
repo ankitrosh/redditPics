@@ -8,7 +8,7 @@ export default function Post(){
     console.log(thisPost)
     return (
         <div>
-            <Link to ="/"> <p className="post--back"> <i class="ri-arrow-left-line"></i> Go Back</p></Link>
+            <Link to ="/"> <p className="post--back"> <i className="ri-arrow-left-line"></i> Go Back</p></Link>
             <h1 className="post--heading">{thisPost.data.title}</h1>
             <h2 className="post--author"> <i class="ri-quill-pen-line"></i> {thisPost.data.author}</h2>
             <div className="post--card">
