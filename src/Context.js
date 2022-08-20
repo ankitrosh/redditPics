@@ -3,14 +3,18 @@ const Context = React.createContext()
 
 function ContextProvider(props) {
     const [allPhotos, setAllPhotos] = useState([])
-    
+    const [sortedPhotos, setSortedPhotos] = useState([])
     const url = "https://www.reddit.com/r/pics/.json?jsonp="
     useEffect(() =>{
         fetch(url)
             .then(res => res.json())
             .then(pics => setAllPhotos(pics.data.children))
+            
+            
     }, [])
-
+    useEffect(()=>{
+        sortPhotos()
+    },[allPhotos])
     function compare(a, b){
         
         if(a.data.title[0] === "(" || a.data.title[0] === "["){
@@ -32,17 +36,16 @@ function ContextProvider(props) {
             return -1
         }
     }
+    
     function sortPhotos(){
-        setAllPhotos(prev =>{
-            const sortedPics = prev
-            sortedPics.sort(compare)
-            return sortedPics
-        })
+        const sortedPics = [...allPhotos]
+        sortedPics.sort(compare)
+        setSortedPhotos(sortedPics)
         
     }
-
+    
     return (
-        <Context.Provider value={{allPhotos, sortPhotos}}>
+        <Context.Provider value={{allPhotos,sortedPhotos,sortPhotos}}>
             {props.children}
         </Context.Provider>
     )

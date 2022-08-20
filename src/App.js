@@ -1,20 +1,23 @@
 import './App.css';
-import React from "react"
+import React, {useContext} from "react"
 import {Switch, Route} from "react-router-dom"
-
+import {Context} from "./Context"
 import Header from "./components/Header"
 import Photos from "./pages/Photos"
 import Post from "./pages/Post"
 function App() {
+  const {allPhotos,sortedPhotos} = useContext(Context)
   return (
     <div>
       <Header />
 
       <Switch>
             <Route exact path="/">
-                <Photos />
+                <Photos allPhotos= {allPhotos}/>
             </Route>
-
+            <Route path= "/sortedView">
+                <Photos allPhotos= {sortedPhotos}/>
+            </Route>
             <Route path= "/post/:postId">
                 <Post />
             </Route>
