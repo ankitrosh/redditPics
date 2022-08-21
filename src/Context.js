@@ -12,6 +12,7 @@ function ContextProvider(props) {
             
             
     }, [])
+    
     useEffect(()=>{
         sortPhotos()
     },[allPhotos])

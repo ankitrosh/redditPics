@@ -20,19 +20,19 @@ header{
     
 }
 
-header >div > button {
+.button {
     border: none;
     color: white;
-    background-color: green;
+    background-color: black;
     height:50px;
     border-radius: 5px;
     margin:2px;
 
 }
 
-header > div > button:hover {
+.button:hover {
     cursor:pointer;
-    background-color: rgb(66, 146, 66);
+    background-color: rgb(47, 46, 46);
 }
 header > h1 {
     margin: 0;
