@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react"
+
+
 const Context = React.createContext()
 
 function ContextProvider(props) {
@@ -17,23 +19,13 @@ function ContextProvider(props) {
     function compareOC(a, b){
         
         if(a.data.title[0] === "(" || a.data.title[0] === "["){
-            if(b.data.title[0] === "(" ||b.data.title[0] === "["){
-                if(a.data.title[5] >= b.data.title[5]){
-                    return 1
-                } else {
-                    return -1
-                }
-            }
+            
             return -1
         }
         if(b.data.title[0] === "(" ||b.data.title[0] === "["){
             return 1
         }
-        if(a.data.title[0] >= b.data.title[0]){
-            return 1
-        } else {
-            return -1
-        }
+        
     }
     
     function compareLikes(a, b){
