@@ -7,7 +7,7 @@ export default function Header(){
     let pageTitle
     if(location.pathname == "/"){
         pageTitle = ""
-    } else {
+    } else if(location.pathname == "/sortedView") {
         pageTitle = pageValue
     }
     
