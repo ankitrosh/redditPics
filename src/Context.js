@@ -26,6 +26,7 @@ function ContextProvider(props) {
             return 1
         }
         
+        return 0
     }
     
     function compareLikes(a, b){

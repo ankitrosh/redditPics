@@ -24,28 +24,4 @@ const {sortPhotosOC,sortPhotosLikes,sortPhotosAwards,sortPhotosComments} = useCo
     </DropdownButton>
   );
 }
-{/* <div>
-                
-                
-                <Link to="/sortedView">
-                    <button className="button" onClick={sortPhotosLikes}>
-                        Up-Votes
-                    </button> 
-                </Link> 
-
-                <Link to="/sortedView"> 
-                    <button className="button" onClick={sortPhotosAwards}> 
-                        Awards
-                    </button> 
-                </Link> 
-
-                <Link to="/sortedView"> 
-                    <button className="button" onClick={sortPhotosComments}> 
-                        Comments
-                    </button> 
-                </Link> 
-
-                
-
-            </div> */}
 export default SortDropDown;

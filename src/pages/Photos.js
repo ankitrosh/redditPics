@@ -2,6 +2,7 @@ import React from "react"
 import {Link} from "react-router-dom"
 
 export default function Photos({allPhotos}){  
+    console.log(allPhotos)
     const displayPhotos = allPhotos.map(photo => {
         return(
             <div key = {photo.data.id} className="photos--card">

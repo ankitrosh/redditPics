@@ -5,8 +5,7 @@ import {Context} from "../Context"
 export default function Header(){
    
     return (
-        <header>
-        
+        <header>       
             <h1>
                 <i className="ri-reddit-line"></i> Reddit Pics
             </h1>
@@ -18,9 +17,6 @@ export default function Header(){
                         </button> 
                 </Link>
             </div>
-        
-            
-            
         </header>
     )
 }
