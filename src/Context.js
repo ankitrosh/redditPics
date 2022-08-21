@@ -12,11 +12,9 @@ function ContextProvider(props) {
             
             
     }, [])
+
     
-    useEffect(()=>{
-        sortPhotos()
-    },[allPhotos])
-    function compare(a, b){
+    function compareOC(a, b){
         
         if(a.data.title[0] === "(" || a.data.title[0] === "["){
             if(b.data.title[0] === "(" ||b.data.title[0] === "["){
@@ -38,15 +36,31 @@ function ContextProvider(props) {
         }
     }
     
-    function sortPhotos(){
+    function compareLikes(a, b){
+  
+        if(a.data.ups > b.data.ups){
+            return -1
+        } else {
+            return 1
+        }
+    }
+
+    function sortPhotosOC(){
         const sortedPics = [...allPhotos]
-        sortedPics.sort(compare)
+        sortedPics.sort(compareOC)
+        setSortedPhotos(sortedPics)
+        
+    }
+
+    function sortPhotosLikes(){
+        const sortedPics = [...allPhotos]
+        sortedPics.sort(compareLikes)
         setSortedPhotos(sortedPics)
         
     }
     
     return (
-        <Context.Provider value={{allPhotos,sortedPhotos,sortPhotos}}>
+        <Context.Provider value={{allPhotos,sortedPhotos,sortPhotosOC,sortPhotosLikes}}>
             {props.children}
         </Context.Provider>
     )
