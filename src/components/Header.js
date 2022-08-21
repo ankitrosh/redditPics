@@ -5,10 +5,11 @@ export default function Header(){
     return (
         <header>
             
-            <h1><i className="ri-reddit-line"></i> Reddit Pics</h1>
+            <h1>
+                <i className="ri-reddit-line"></i> Reddit Pics</h1>
             <div>
-            <Link to="/sortedView"> <button className="button"> OC's First </button> </Link> 
-            <Link to="/"> <button  className="button"> Default View  </button> </Link>
+                <Link to="/sortedView"> <button className="button"> OC's First </button> </Link> 
+                <Link to="/"> <button  className="button"> Default View  </button> </Link>
             </div>
             
         </header>

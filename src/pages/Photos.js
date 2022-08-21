@@ -23,10 +23,7 @@ export default function Photos({allPhotos}){
                 
                 <Link to={`post/${photo.data.id}`}><img src = {photo.data.thumbnail} className = "images"></img></Link>
                 <Link to={`post/${photo.data.id}`}>
-                    <p className = "photos--title tooltip"> {trim(photo.data.title) } 
-                        <span className="tooltiptext">{photo.data.title}</span>
-                    </p> 
-                    
+                    <p className = "photos--title"> {photo.data.title } </p> 
                 </Link>
                 
             </div>
