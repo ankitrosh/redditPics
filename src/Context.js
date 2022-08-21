@@ -45,6 +45,24 @@ function ContextProvider(props) {
         }
     }
 
+    function compareAwards(a, b){
+  
+        if(a.data.total_awards_received > b.data.total_awards_received){
+            return -1
+        } else {
+            return 1
+        }
+    }
+
+    function compareComments(a, b){
+  
+        if(a.data.num_comments > b.data.num_comments){
+            return -1
+        } else {
+            return 1
+        }
+    }
+
     function sortPhotosOC(){
         const sortedPics = [...allPhotos]
         sortedPics.sort(compareOC)
@@ -58,9 +76,23 @@ function ContextProvider(props) {
         setSortedPhotos(sortedPics)
         
     }
+
+    function sortPhotosAwards(){
+        const sortedPics = [...allPhotos]
+        sortedPics.sort(compareAwards)
+        setSortedPhotos(sortedPics)
+        
+    }
+
+    function sortPhotosComments(){
+        const sortedPics = [...allPhotos]
+        sortedPics.sort(compareComments)
+        setSortedPhotos(sortedPics)
+        
+    }
     
     return (
-        <Context.Provider value={{allPhotos,sortedPhotos,sortPhotosOC,sortPhotosLikes}}>
+        <Context.Provider value={{allPhotos,sortedPhotos,sortPhotosOC,sortPhotosLikes,sortPhotosAwards,sortPhotosComments}}>
             {props.children}
         </Context.Provider>
     )
