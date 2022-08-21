@@ -8,18 +8,15 @@ export default function Photos({allPhotos}){
             <div key = {photo.data.id} className="photos--card">
             
                 <Link to={`post/${photo.data.id}`}>
-                    <img src = {photo.data.thumbnail} className = "images" />
+                    <img src = {photo.data.thumbnail} className = "photos--images" />
                 </Link>
 
                 <Link to={`post/${photo.data.id}`}>
-                    <p className = "photos--title"> {photo.data.title } </p> 
+                    <p className = "photos--title"> {photo.data.title } </p>
                 </Link>
-                
-            </div>
-            
-        )
-        
-        
+
+            </div>    
+        ) 
     })
     
     return (
