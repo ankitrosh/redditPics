@@ -61,7 +61,7 @@ function ContextProvider(props) {
         const sortedPics = [...allPhotos]
         sortedPics.sort(compareOC)
         setSortedPhotos(sortedPics)
-        setPageValue("Sorted Original Content First")
+        setPageValue("Original Content First")
         
     }
 

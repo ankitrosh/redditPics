@@ -28,20 +28,17 @@ export default function Post(){
                 <p> 
                     <span className="post--likes">
                         <i className="ri-thumb-up-line"></i> 
-                    </span> 
-                    Up-Votes : {thisPost.data.ups}
+                    </span> Up-Votes : {thisPost.data.ups}
                 </p>
                 <p> 
                     <span className="post--comments">
                         <i className="ri-chat-4-line"></i>
-                    </span> 
-                    Comments : {thisPost.data.num_comments}
+                    </span> Comments : {thisPost.data.num_comments}
                 </p>
                 <p> 
                     <span className="post--award">
                         <i className="ri-trophy-line"></i> 
-                    </span> 
-                    Awards : {thisPost.data.total_awards_received}
+                    </span> Awards : {thisPost.data.total_awards_received}
                 </p>
             </div>
         </div>

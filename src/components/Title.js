@@ -6,7 +6,7 @@ export default function Header(){
     const {pageValue} = useContext(Context)
     let pageTitle
     if(location.pathname == "/"){
-        pageTitle = "Default View"
+        pageTitle = ""
     } else {
         pageTitle = pageValue
     }
