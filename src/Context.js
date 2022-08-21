@@ -6,6 +6,7 @@ const Context = React.createContext()
 function ContextProvider(props) {
     const [allPhotos, setAllPhotos] = useState([])
     const [sortedPhotos, setSortedPhotos] = useState([])
+    const [pageValue, setPageValue] = useState("Default")
     const url = "https://www.reddit.com/r/pics/.json?jsonp="
     useEffect(() =>{
         fetch(url)
@@ -60,6 +61,7 @@ function ContextProvider(props) {
         const sortedPics = [...allPhotos]
         sortedPics.sort(compareOC)
         setSortedPhotos(sortedPics)
+        setPageValue("Sorted Original Content First")
         
     }
 
@@ -67,6 +69,7 @@ function ContextProvider(props) {
         const sortedPics = [...allPhotos]
         sortedPics.sort(compareLikes)
         setSortedPhotos(sortedPics)
+        setPageValue("Sorted By Likes")
         
     }
 
@@ -74,6 +77,7 @@ function ContextProvider(props) {
         const sortedPics = [...allPhotos]
         sortedPics.sort(compareAwards)
         setSortedPhotos(sortedPics)
+        setPageValue("Sorted By Awards")
         
     }
 
@@ -81,11 +85,11 @@ function ContextProvider(props) {
         const sortedPics = [...allPhotos]
         sortedPics.sort(compareComments)
         setSortedPhotos(sortedPics)
-        
+        setPageValue("Sorted By Comments")
     }
     
     return (
-        <Context.Provider value={{allPhotos,sortedPhotos,sortPhotosOC,sortPhotosLikes,sortPhotosAwards,sortPhotosComments}}>
+        <Context.Provider value={{allPhotos,sortedPhotos,pageValue,sortPhotosOC,sortPhotosLikes,sortPhotosAwards,sortPhotosComments}}>
             {props.children}
         </Context.Provider>
     )

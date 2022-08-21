@@ -57,7 +57,10 @@ a:hover{
     text-decoration-color: black;
     
 }
-
+.title--heading{
+    text-align: center;
+    
+}
 @media (min-width:768px) {
     .photos--divs{
         margin: 10px;
@@ -88,11 +91,23 @@ a:hover{
     color: black;
 }
 
-.photos--images{
-    width: 250px;
-    height: 200px;
-    margin:10px;
+
+@media (min-width:768px){
+    .photos--images{
+        width: 250px;
+        height: 200px;
+        margin:10px;
+    }
 }
+
+@media (max-width:768px){
+    .photos--images{
+        width: 200px;
+        height: 200px;
+        margin:5px;
+    }
+}
+
 .photos--images:hover{
     box-shadow: 0px 2px 15px -5px rgba(21,6,5,1);
     -webkit-box-shadow: 0px 2px 15px -5px rgba(21,6,5,1);
@@ -137,6 +152,7 @@ a:hover{
 
 .post--cardText{
     width: 60%;
+    text-align: justify;
 }
 
 
@@ -156,8 +172,8 @@ a:hover{
     color:lightskyblue;
 }
 .post--images{
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     margin:10px;
 }
 
