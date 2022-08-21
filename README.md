@@ -1,6 +1,6 @@
 # About the Site
 
-The homepage of the site displays thumbnails and titles received from reddit api and displays them like a gallery clicking on an image will take you into details page of the clicked image. Additionally you can sort the view in the homepage based on number of awards, likes and comments and also if you wish you can also push everything that is not original to the bottom using sort OC option.
+The homepage of the site displays thumbnails and titles received from reddit api and displays them like a gallery clicking on an image will take you into details page of the clicked image. Additionally you can sort the view in the homepage based on number of awards, likes and comments and also if you wish you can also push everything that is not original to the bottom using OC's first option in sort.
 
 
 
