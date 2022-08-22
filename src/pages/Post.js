@@ -26,7 +26,7 @@ export default function Post(){
         return (
             <div>
                 <img src = {award.icon_url}  className="post--icon"/>
-                <span> {award.name} - {award.count}</span>
+                <span> {award.name}:{award.count}</span>
                 <p>{trimLength(award.description)}</p>
                 
             </div>
