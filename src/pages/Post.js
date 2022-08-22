@@ -17,7 +17,7 @@ export default function Post(){
         if(words.length < 30){
             return words
         } else {
-            words = words.substring(1,27) + "..."
+            words = words.substring(0,27) + "..."
             return words
         }
     }
